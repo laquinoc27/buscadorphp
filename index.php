@@ -45,7 +45,7 @@
               <option value="" selected>Elige una ciudad</option>
               <?php
                 foreach($ciudades as $key => $value) {
-                  echo '<option value="'.$value.'">'.$value.'</option>';
+                  echo '<option value="'.$key.'">'.$value.'</option>';
                 }
               ?>
             </select>
@@ -56,7 +56,7 @@
               <option value="" selected>Elige un tipo</option>
               <?php
                 foreach($tipos as $key => $value) {
-                  echo '<option value="'.$value.'">'.$value.'</option>';
+                  echo '<option value="'.$key.'">'.$value.'</option>';
                 }
               ?>
             </select>

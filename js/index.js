@@ -11,7 +11,14 @@ $consultaBackend = function(datosForm){
       console.log(response);
       document.getElementById('resultadobusqueda').innerHTML = '';
       for(let i = 0, j = response.length; i < j; i++){
-        document.getElementById('resultadobusqueda').innerHTML+= '<div class="item card"><img src="img/home.jpg" alt="Home"><div class="badge"><b>Dirección: </b>'+response[i].Direccion+'<br><b>Ciudad: </b>'+response[i].Ciudad+'<br><b>Teléfono: </b>'+response[i].Telefono+'<br><b>Código postal: </b>'+response[i].Codigo_Postal+'<br><b>Tipo: </b>'+response[i].Tipo+'<br><b>Precio: </b><span class="precioTexto">'+response[i].Precio+'</span></div></div>';
+        let hmtlResp = '<div class="item card"><img src="img/home.jpg" alt="Home"><div class="desc_bus"><b>Dirección: </b>'
+                        +response[i].Direccion+'<br><b>Ciudad: </b>'
+                        +response[i].Ciudad+'<br><b>Teléfono: </b>'
+                        +response[i].Telefono+'<br><b>Código postal: </b>'
+                        +response[i].Codigo_Postal+'<br><b>Tipo: </b>'
+                        +response[i].Tipo+'<br><b>Precio: </b><span class="precioTexto">'
+                        +response[i].Precio+'</span></div><div class="leermas"><b><a href="#">LEER MÁS</a></b></div></div>';
+        document.getElementById('resultadobusqueda').innerHTML+=hmtlResp;
       }
     },
     error: function(){
@@ -43,7 +50,6 @@ $(document).ready(function(){
     let datosForm = new FormData();
     datosForm.append('mostrarTodo', '1');
     $consultaBackend(datosForm);
-    //$("#selectCiudad").val('0');
   });
 });
 
