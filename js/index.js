@@ -43,6 +43,7 @@ $(document).ready(function(){
     let datosForm = new FormData();
     datosForm.append('mostrarTodo', '1');
     $consultaBackend(datosForm);
+    //$("#selectCiudad").val('0');
   });
 });
 
